@@ -29,6 +29,8 @@ This script will evolve, depending of releases of the psa_car_controller. And my
 
 Edit the file **/config/sensor.yaml** and add the following code, by replacing the URL with your own:
 
+Note: If **/config/sensor.yaml** does not exist create it with the same owner and permissions as **/config/configuration.yaml**
+
 ```yaml
 # citroen ec4  
 - platform: rest
@@ -167,6 +169,7 @@ Edit the file **/config/sensor.yaml** and add the following code, by replacing t
 Edit the file **/config/configuration.yaml** and add the following code, by replacing the URL with your own:
 
 ```yaml
+sensor: !include sensor.yaml  # Required only if /config/sensor.yaml was created
 rest_command:
   # ec4 WakeUp command
   ec4_wakeup:
